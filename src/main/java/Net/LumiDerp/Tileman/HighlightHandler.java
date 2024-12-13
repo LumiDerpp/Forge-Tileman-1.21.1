@@ -12,6 +12,7 @@ import net.minecraftforge.client.event.RenderLevelStageEvent; // Correct import 
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.client.renderer.RenderType; // Import RenderType
+import org.joml.Matrix4f;
 
 @Mod.EventBusSubscriber(modid = Tileman.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class HighlightHandler {
@@ -31,7 +32,7 @@ public class HighlightHandler {
             if (hitResult != null && hitResult.getType() == HitResult.Type.BLOCK) {
                 BlockHitResult blockHitResult = (BlockHitResult) hitResult; // Explicit cast
                 BlockPos blockPos = blockHitResult.getBlockPos();
-                PoseStack poseStack = event.getPoseStack();
+                Matrix4f poseStack = event.getPoseStack();
 
                 // Render a highlight around the block
                 LevelRenderer.renderLineBox(poseStack, mc.renderBuffers().bufferSource().getBuffer(RenderType.lines()),
