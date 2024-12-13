@@ -8,7 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.BlockHitResult; // Correct import for BlockHitResult
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderLevelStageEvent; // Correct import for RenderWorldLastEvent
+import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.client.renderer.RenderType; // Import RenderType
