@@ -26,16 +26,17 @@ public class HighlightHandler {
 
         // Check if the player is holding a wooden shovel
         if (mc.player.getMainHandItem().getItem() == Items.WOODEN_SHOVEL) {
-            HitResult hitResult;
+            HitResult hitResult = null;
 
             // Check if the player is looking at a block
             if (hitResult != null && hitResult.getType() == HitResult.Type.BLOCK) {
                 BlockHitResult blockHitResult = (BlockHitResult) hitResult; // Explicit cast
                 BlockPos blockPos = blockHitResult.getBlockPos();
-                Matrix4f poseStack = event.getPoseStack();
+                Matrix4f poseStack = event.getProjectionMatrix();
 
                 // Render a highlight around the block
-                LevelRenderer.renderLineBox(poseStack, mc.renderBuffers().bufferSource().getBuffer(RenderType.lines()),
+                PoseStack PoseStack = null;
+                LevelRenderer.renderLineBox(PoseStack, mc.renderBuffers().bufferSource().getBuffer(RenderType.lines()),
                         blockPos.getX() - 0.01, blockPos.getY() - 0.01, blockPos.getZ() - 0.01,
                         blockPos.getX() + 1.01, blockPos.getY() + 1.01, blockPos.getZ() + 1.01,
                         1.0F, 1.0F, 0.0F, 1.0F); // Color: yellow with full opacity
