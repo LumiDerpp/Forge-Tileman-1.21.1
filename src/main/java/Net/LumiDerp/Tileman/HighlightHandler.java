@@ -12,7 +12,6 @@ import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.joml.Matrix4f;
 
-
 public class HighlightHandler {
 
     @SubscribeEvent
